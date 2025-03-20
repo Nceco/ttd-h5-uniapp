@@ -8,12 +8,5 @@ export default defineConfig({
       "@": path.resolve(__dirname, "src")
     }
   },
-  css: {
-    preprocessorOptions: {
-      scss: {
-        additionalData: `@use "@/uni.scss";` // 全局引入
-      }
-    }
-  },
   plugins: [uni()]
 });
