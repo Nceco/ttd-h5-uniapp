@@ -1,8 +1,8 @@
-import { createSSRApp } from "vue";
+import { createApp } from "vue";
+import { createPinia } from "pinia";
 import App from "./App.vue";
-export function createApp() {
-  const app = createSSRApp(App);
-  return {
-    app
-  };
-}
+const app = createApp(App);
+//注册pinia
+const pinia = createPinia();
+app.use(pinia);
+app.mount("#app");

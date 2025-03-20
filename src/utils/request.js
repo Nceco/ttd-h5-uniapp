@@ -1,5 +1,10 @@
-import { md5 } from "./common";
-import { baseUrl } from "../config";
+import { md5, toastDuration } from "./common";
+import { baseUrl } from "@/config";
+
+//ret_code
+// 3100 重复排队触发
+
+const sp_codes = ["3100", "3102", "3101", "3002", "500"]; // 交由页面内部自己处理的错误编码，不做全局的统一拦截
 
 function getHeaders(headers) {
   const params = headers["X-Ca-Signature-Headers"].split(",");
@@ -54,7 +59,38 @@ function getSignHeader(opt) {
   return headers;
 }
 
-uni.addInterceptor("request", {});
+// 自定义一个响应拦截器处理一些公共逻辑
+const beforeResponse = (res, resolve, reject) => {
+  if (res.statusCode === 200) {
+    if (
+      !sp_codes.includes(res?.data?.ret_code) &&
+      res?.data?.ret_code !== "0000"
+    ) {
+      // 统一的错误编码拦截
+      uni.showToast({
+        title: res?.data?.ret_msg || "error",
+        icon: "error",
+        duration: toastDuration
+      });
+      reject(res);
+    } else {
+      //成功的数据和部分sp_codes包含的数据需要resolve出去
+      resolve(res?.data);
+    }
+  } else {
+    //后端接口报类似500也返回给前端数据了。。。所以加一层promise的拦截
+    if (res?.statusCode === 401 || res?.data?.status === 401) {
+      // 未登录？（暂时无登录功能）
+    } else {
+      uni.showToast({
+        title: res?.data?.error || "error",
+        icon: "error",
+        duration: toastDuration
+      });
+    }
+    reject(res?.data?.error);
+  }
+};
 
 const Request = (options, method = "GET") => {
   const { url, headers, ...otherConfig } = options;
@@ -75,7 +111,19 @@ const Request = (options, method = "GET") => {
     },
     ...otherConfig
   };
-  return uni.request(baseOptions);
+  return new Promise((resolve, reject) => {
+    uni
+      .request(baseOptions)
+      .then((res) => beforeResponse(res, resolve, reject))
+      .catch((err) => {
+        uni.showToast({
+          title: err,
+          icon: "error",
+          duration: toastDuration
+        });
+        reject(err);
+      });
+  });
 };
 
 Request.ttd = (api, data = {}) =>

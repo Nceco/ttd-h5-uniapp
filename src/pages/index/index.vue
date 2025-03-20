@@ -1,7 +1,7 @@
 <template>
   <view class="content">
     <image class="logo" src="/static/logo.png"></image>
-    <view class="text-area">
+    <view class="text-area" @click="handleClick">
       <text class="title">{{ title }}</text>
     </view>
   </view>
@@ -15,7 +15,13 @@
       };
     },
     onLoad() {},
-    methods: {}
+    methods: {
+      handleClick() {
+        uni.navigateTo({
+          url: "/pages/foodorder/index?mid=84a2175d-8063-425b-b290-c915ac11f959&tno=07"
+        });
+      }
+    }
   };
 </script>
 

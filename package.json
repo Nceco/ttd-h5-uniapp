@@ -51,9 +51,11 @@
     "@dcloudio/uni-mp-weixin": "3.0.0-4040520250104002",
     "@dcloudio/uni-mp-xhs": "3.0.0-4040520250104002",
     "@dcloudio/uni-quickapp-webview": "3.0.0-4040520250104002",
+    "@dcloudio/uni-ui": "^1.5.7",
+    "crypto-js": "^4.2.0",
+    "pinia": "^3.0.1",
     "vue": "^3.4.21",
-    "vue-i18n": "^9.1.9",
-    "crypto-js": "^4.2.0"
+    "vue-i18n": "^9.1.9"
   },
   "devDependencies": {
     "@dcloudio/types": "^3.4.8",
@@ -69,6 +71,8 @@
     "husky": "^9.1.7",
     "lint-staged": "^15.5.0",
     "prettier": "^3.5.3",
+    "sass": "^1.86.0",
+    "sass-loader": "10.1.1",
     "vite": "5.2.8",
     "vue-eslint-parser": "^10.1.1"
   },
