@@ -12,6 +12,9 @@
 		},
 		{
 			"path": "pages/foodorder/index"
+		},
+		{
+			"path": "pages/chooseDiners/index"
 		}
 	],
 	"globalStyle": {
