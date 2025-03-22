@@ -15,6 +15,9 @@
 		},
 		{
 			"path": "pages/chooseDiners/index"
+		},
+		{
+			"path": "pages/foodHome/index"
 		}
 	],
 	"globalStyle": {

@@ -83,9 +83,10 @@ body {
 }
 
 .uni-toast {
-  padding: 20px 0 !important;
+  padding: 10px 0;
 }
 
 .uni-toast__content {
   word-break: break-all; //设置一个单词可换行（修改toast 单个单词过长不换行的问题）
+  padding: 0 10px;
 }

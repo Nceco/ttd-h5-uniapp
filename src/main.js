@@ -1,8 +1,16 @@
-import { createApp } from "vue";
+import { createSSRApp } from "vue";
 import { createPinia } from "pinia";
+import { initLangConfig } from "@/locales";
 import App from "./App.vue";
-const app = createApp(App);
-//注册pinia
+import { updateApp } from "@/utils/common";
 const pinia = createPinia();
-app.use(pinia);
-app.mount("#app");
+export function createApp() {
+  updateApp();
+  const app = createSSRApp(App);
+  app.use(pinia);
+  //初始化国际化
+  initLangConfig(app, navigator.language || "ja");
+  return {
+    app
+  };
+}

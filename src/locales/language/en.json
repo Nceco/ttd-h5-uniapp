@@ -1,0 +1,9 @@
+{
+    "common":{
+        "confirm":"Confirm",
+        "tableNumber":"Table Number",
+        "more":"More",
+        "pcds":"Please select the number of diners",
+        "nothing":"nothing"
+    }
+}

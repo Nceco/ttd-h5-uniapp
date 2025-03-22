@@ -44,6 +44,16 @@ export function simplifyLanguageCode(languageCode, def) {
   return def;
 }
 
+export const navigateBack = (options) => {
+  const option = { ...{ delta: 1 }, ...options };
+  if (process.env.UNI_PLATFORM === "h5") {
+    // 兼容浏览器刷新后taro路由栈清空的问题
+    history.go(-option.delta);
+  } else {
+    uni.navigateBack(options);
+  }
+};
+
 // 每次打包发版调用一次，清空旧数据
 export function updateApp() {
   // 模拟版本更新

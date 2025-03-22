@@ -1,0 +1,9 @@
+{
+    "common":{
+        "confirm":"确认",
+        "tableNumber":"桌号",
+        "more":"更多",
+        "pcds":"请选择用餐人数",
+        "nothing":"无"
+    }
+}
