@@ -53,7 +53,7 @@
     "@dcloudio/uni-quickapp-webview": "3.0.0-4040520250104002",
     "@dcloudio/uni-ui": "^1.5.7",
     "crypto-js": "^4.2.0",
-    "pinia": "^3.0.1",
+    "pinia": "2.0.33",
     "vue": "^3.4.21",
     "vue-i18n": "^9.1.9"
   },

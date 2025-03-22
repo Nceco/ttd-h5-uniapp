@@ -1,0 +1,12 @@
+body {
+  font-family:
+    -apple-system-font,
+    Helvetica Neue,
+    sans-serif;
+}
+.uni-toast {
+  padding: 20px 0 !important;
+}
+.uni-toast__content {
+  word-break: break-all;
+}
