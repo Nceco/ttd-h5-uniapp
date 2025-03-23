@@ -4,6 +4,11 @@
         "tableNumber":"テーブル",
         "more":"もっと",
         "pcds":"人数をお選びください",
-        "nothing":"なし"
+        "nothing":"なし",
+        "dialogConfirmTxt":"OK",
+        "dialogCancelTxt":"取消し",
+        "tips": "お願い",
+        "noPayTip1":"先にお支払いをお願い致します",
+        "noPayTip2":"お支払いの確認ができ次第料理をお作り致します"
     }
 }

@@ -67,3 +67,21 @@ export function updateApp() {
 
 // toast默认duration
 export const toastDuration = 4000;
+
+export const guid = () => {
+  return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxX".replace(/[xy]/g, function (c) {
+    const r = (Math.random() * 160) | 0;
+    const v = c == "x" ? r : (r & 0x3) | 0x8;
+    return v.toString(16);
+  });
+};
+
+// 生成一个支付标志flag
+export const generatePayFlag = (mid) => {
+  let flag = uni.getStorageSync(`${mid}_canPayFlag`);
+  if (!flag) {
+    flag = guid();
+    uni.setStorageSync(`${mid}_canPayFlag`, flag);
+  }
+  return flag;
+};

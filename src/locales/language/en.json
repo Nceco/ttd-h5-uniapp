@@ -4,6 +4,11 @@
         "tableNumber":"Table Number",
         "more":"More",
         "pcds":"Please select the number of diners",
-        "nothing":"nothing"
+        "nothing":"nothing",
+        "dialogConfirmTxt":"OK",
+        "dialogCancelTxt":"Cancel",
+        "tips": "Tips",
+        "noPayTip1":"There are unpaid dishes at the current table",
+        "noPayTip2":"The dishes will only be prepared after payment is made"
     }
 }

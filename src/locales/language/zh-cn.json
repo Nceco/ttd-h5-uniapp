@@ -4,6 +4,11 @@
         "tableNumber":"桌号",
         "more":"更多",
         "pcds":"请选择用餐人数",
-        "nothing":"无"
+        "nothing":"无",
+        "dialogConfirmTxt":"OK",
+        "dialogCancelTxt":"取消",
+        "tips": "提示",
+        "noPayTip1":"当前桌存在未支付的菜",
+        "noPayTip2":"菜品需支付后才会制作"
     }
 }

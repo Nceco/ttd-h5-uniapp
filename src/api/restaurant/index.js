@@ -36,3 +36,29 @@ export const chooseTableFoodNumberApi = (baseBody, mid, tableNo, peopleNo) => {
   };
   return Request.ttd(api, data);
 };
+
+// 获取当前订单的几个支付金额
+export const getOrderPayAmountsApi = (baseBody, foodOrderId) => {
+  const api =
+    "com.ttdtrip.api.restaurant.apis.service.v4.GetTenValuesApiService";
+  const data = {
+    base: baseBody,
+    foodOrderId
+  };
+  return Request.ttd(api, data);
+};
+
+/**
+ * 支付锁
+ * com.ttdtrip.api.restaurant.apis.service.v4.FlagLockApiService
+ */
+
+export const flagLockApi = (baseBody, orderId, flag) => {
+  const api = "com.ttdtrip.api.restaurant.apis.service.v4.FlagLockApiService";
+  const data = {
+    base: baseBody,
+    orderId,
+    flag
+  };
+  return Request.ttd(api, data);
+};

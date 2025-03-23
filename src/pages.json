@@ -18,6 +18,9 @@
 		},
 		{
 			"path": "pages/foodHome/index"
+		},
+		{
+			"path": "pages/chooseFoods/index"
 		}
 	],
 	"globalStyle": {

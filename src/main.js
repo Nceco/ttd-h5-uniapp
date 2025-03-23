@@ -4,8 +4,8 @@ import { initLangConfig } from "@/locales";
 import App from "./App.vue";
 import { updateApp } from "@/utils/common";
 const pinia = createPinia();
+updateApp();
 export function createApp() {
-  updateApp();
   const app = createSSRApp(App);
   app.use(pinia);
   //初始化国际化
