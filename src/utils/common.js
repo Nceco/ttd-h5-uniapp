@@ -85,3 +85,9 @@ export const generatePayFlag = (mid) => {
   }
   return flag;
 };
+
+export const getSupportedLanguage = (language) => {
+  return language.reduce((pre, curr) => {
+    return `${pre}/${curr}`;
+  });
+};

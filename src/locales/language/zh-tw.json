@@ -9,6 +9,18 @@
         "dialogCancelTxt":"取消",
         "tips": "提示",
         "noPayTip1":"當前桌存在未支付的菜",
-        "noPayTip2":"菜品需支付後才會製作"
+        "noPayTip2":"菜品需支付後才會製作",
+        "que":"排隊"
+    },
+    "queue":{
+        "restaurantInfo":"店鋪介紹",
+        "openTime":"營業時間",
+        "playTime":"遊玩時間",
+        "phone":"聯繫電話",
+        "email":"郵箱",
+        "fax":"傳真號",
+        "supportLang":"服務語言",
+        "currentLineCount":"當前排隊人數",
+        "offline":"提示：商戶已下線，暫不能排隊"
     }
 }

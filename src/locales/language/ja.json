@@ -9,6 +9,18 @@
         "dialogCancelTxt":"取消し",
         "tips": "お願い",
         "noPayTip1":"先にお支払いをお願い致します",
-        "noPayTip2":"お支払いの確認ができ次第料理をお作り致します"
+        "noPayTip2":"お支払いの確認ができ次第料理をお作り致します",
+        "que":"番号札を取る"
+    },
+    "queue":{
+        "restaurantInfo":"店舗紹介",
+        "openTime":"営業時間",
+        "playTime":"遊ぶ時間",
+        "phone":"電話番号",
+        "email":"メールアドレス",
+        "fax":"FAX番号",
+        "supportLang":"サービス言語",
+        "currentLineCount":"ただいま順番待ちの人数",
+        "offline":"お知らせ：営業時間外ですので、順番待ち受付はまだご利用頂けません"
     }
 }

@@ -1,3 +1,5 @@
 node_modules/**
 *.d.ts
 .prettierrc.js
+package-lock.json
+package.json

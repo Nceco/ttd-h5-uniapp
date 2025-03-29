@@ -9,6 +9,18 @@
         "dialogCancelTxt":"Cancel",
         "tips": "Tips",
         "noPayTip1":"There are unpaid dishes at the current table",
-        "noPayTip2":"The dishes will only be prepared after payment is made"
+        "noPayTip2":"The dishes will only be prepared after payment is made",
+        "que":"Queue"
+    },
+    "queue":{
+        "restaurantInfo":"Store Introduction",
+        "openTime":"Opening Hours",
+        "playTime":"Best Hours for Playing",
+        "phone":"Phone Number",
+        "email":"Email",
+        "fax":"Fax Number",
+        "supportLang":"Service Language",
+        "currentLineCount":"Current queue size",
+        "offline":"Tips：Store not opening, unable to queue"
     }
 }

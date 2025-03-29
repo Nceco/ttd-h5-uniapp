@@ -7,7 +7,9 @@ module.exports = {
   globals: { uni: true, wx: true },
   rules: {
     "no-mixed-spaces-and-tabs": ["error", "smart-tabs"],
-    "vue/multi-word-component-names": "off"
+    "vue/multi-word-component-names": "off",
+    "vue/no-v-html": "off",
+    "vue/no-v-text-v-html-on-component": "off"
   },
   env: {
     es6: true,
