@@ -21,6 +21,9 @@
 		},
 		{
 			"path": "pages/chooseFoods/index"
+		},
+		{
+			"path": "pages/scanqueue/index"
 		}
 	],
 	"globalStyle": {

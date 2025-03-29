@@ -62,3 +62,35 @@ export const flagLockApi = (baseBody, orderId, flag) => {
   };
   return Request.ttd(api, data);
 };
+
+/**
+ * 获取商品详情接口
+ * @param baseBody - 基础请求体
+ * @param goodsId - 商品ID
+ * @returns - 返回的商品详情接口数据
+ */
+export const getGoodsDetailApi = (baseBody, goodsId) => {
+  const api = "com.ttdtrip.api.goods.apis.GoodsDetailApiService";
+  const data = {
+    base: baseBody,
+    gid: goodsId
+  };
+  return Request.ttd(api, data);
+};
+
+/**
+ * 获取排队列表
+ * @param baseBody - 基础请求参数
+ * @param  mid - 中间参数
+ * @param day - 日期参数
+ * @returns- 返回的API数据
+ */
+export const getGoodsLineUpListApi = (baseBody, mid, day) => {
+  const api = "com.ttdtrip.api.goods.apis.line.LineListApiService";
+  const data = {
+    base: baseBody,
+    mid,
+    day
+  };
+  return Request.ttd(api, data);
+};
