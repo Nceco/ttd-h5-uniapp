@@ -21,6 +21,6 @@
         "fax":"傳真號",
         "supportLang":"服務語言",
         "currentLineCount":"當前排隊人數",
-        "offline":"提示：商戶已下線，暫不能排隊"
+        "offline":"商戶已下線，暫不能排隊"
     }
 }

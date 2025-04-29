@@ -5,24 +5,28 @@
   import { getGoodsDetailApi, getGoodsLineUpListApi } from "@/api/restaurant";
   import { useBaseStore } from "@/pinia";
   import { getSupportedLanguage } from "@/utils/common";
+  import { useI18n } from "vue-i18n";
+  const { t } = useI18n();
   const baseInfo = useBaseStore();
   const goodInfo = reactive({
     goods: undefined,
     imgUrls: []
   });
 
-  // const baseInfo = reactive({
-  //     mid: '',
-  //     gid: ''
-  // })
+  const baseInfoRef = reactive({
+    mid: "",
+    gid: ""
+  });
 
   onLoad(async (options) => {
     uni.showLoading();
-    console.log(options);
+    // console.log(options);
     // baseInfo.gid = options.gid
     // baseInfo.mid = options.mid
     await getGoodDetail(options.gid);
     await getGoodLineCount(options.mid);
+    baseInfoRef.gid = options.gid;
+    baseInfoRef.mid = options.mid;
     uni.hideLoading();
   });
 
@@ -33,7 +37,6 @@
         goodInfo.goods = res.goodsVO;
         goodInfo.imgUrls = res.goodsVO.goodsBase.pics || [];
       }
-      console.log(goodInfo, "--ds--");
     } catch (e) {
       console.error(e);
       uni.hideLoading();
@@ -63,6 +66,29 @@
       }
     } catch (e) {
       console.error(e);
+      uni.hideLoading();
+    }
+  };
+  const goToLineUp = async () => {
+    const { mid, gid } = baseInfoRef;
+    console.log(mid, gid);
+    uni.showLoading();
+    try {
+      const checkLineUpRes = await getGoodsDetailApi(
+        baseInfo.baseBody,
+        baseInfoRef.gid
+      );
+      if (checkLineUpRes.goodsVO.goodsBase.lineUp !== 1) {
+        uni.hideLoading();
+        uni.showToast({
+          title: t("queue.offline"),
+          icon: "error"
+        });
+        return;
+      }
+    } catch (e) {
+      console.error(e);
+    } finally {
       uni.hideLoading();
     }
   };
@@ -132,7 +158,12 @@
       >
         <text>{{ $t("queue.offline") }}</text>
       </view>
-      <TButton :text="$t('common.que')" width="100%" radius="2px" />
+      <TButton
+        :text="$t('common.que')"
+        width="100%"
+        radius="2px"
+        @click="goToLineUp"
+      />
     </view>
   </view>
 </template>

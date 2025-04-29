@@ -21,6 +21,6 @@
         "fax":"Fax Number",
         "supportLang":"Service Language",
         "currentLineCount":"Current queue size",
-        "offline":"Tips：Store not opening, unable to queue"
+        "offline":"Store not opening, unable to queue"
     }
 }

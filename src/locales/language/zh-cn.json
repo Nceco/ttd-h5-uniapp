@@ -21,6 +21,6 @@
         "fax":"传真号",
         "supportLang":"服务语言",
         "currentLineCount":"当前排队人数",
-        "offline":"提示：商户已下线，暂不能排队"
+        "offline":"商户已下线，暂不能排队"
     }
 }
